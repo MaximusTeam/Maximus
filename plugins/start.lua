@@ -50,19 +50,6 @@ local function do_keyboard_startme()
 	    }
     }
     return keyboard
-end
-local function do_keyboard_channel()
-    local keyboard = {}
-    keyboard.inline_keyboard = {
-    	{
-    		{text = 'Persian Channel 🇮🇷', url = 'https://telegram.me/BeatBot_team'},
-        },
-		{
-	        {text = '🔗 Back To Menu', callback_data = '!home'},
-        }
-    }
-    return keyboard
-end
 
 local function do_keyboard_game()
     local keyboard = {}
@@ -105,12 +92,12 @@ local action = function(msg, blocks, ln)
         local msg_id = msg.message_id
         local text
 if query == 'robot' then
-            local text = [[📍 یکی رو انتخاب کن، هر کدوم از ادمینا که اومد ازش پول بگیر!📍]]
+            local text = [[📍Select One📍\n🔗یکی رو انتخاب کن🔗]]
             local keyboard = do_keyboard_robot()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'home' then
-            local text = [[📍Select One ⏬]]
+            local text = [[📍Select One ⏬\nℹیکی رو انتخاب کنℹ]]
             local keyboard = do_keyboard_private()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
@@ -128,7 +115,7 @@ return {
 	    '^/(start)$',
 	    '^/(help)$',
 	    '^###cb:!(home)',
-		'^###cb:!(buygroup)',
+		'^###cb:!(game)',
 	    '^###cb:!(channel)',
 	    '^###cb:!(robot)',
 	    '^###cb:!(share)',
