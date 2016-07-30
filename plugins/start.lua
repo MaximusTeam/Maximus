@@ -85,15 +85,6 @@ local function do_keyboard_game()
 end
 
 local action = function(msg, blocks, ln)
-    if blocks[1] == 'approids' then
-        db:hset('bot:users', msg.from.id, 'xx')
-        db:hincrby('bot:general', 'users', 1)
-        if msg.chat.type == 'private' then
-            local message = [[Comming Soon....]]
-            local keyboard = do_keyboard_approids()
-            api.sendKeyboard(msg.from.id, message, keyboard, true)
-            end
-local action = function(msg, blocks, ln)
     if blocks[1] == 'start' or blocks[1] == 'help' then
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
@@ -134,7 +125,6 @@ return {
 	triggers = {
 	    '^/(start)@MaximumRobot$',
 	    '^/(start)$',
-	    '^/(approids)$',
 	    '^/(help)$',
 	    '^###cb:!(home)',
 		'^###cb:!(game)',
