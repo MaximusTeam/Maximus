@@ -5,7 +5,7 @@ local function do_keyboard_robot()
     					{text = 'Share Admin Contact ℹ🏾', callback_data = '!share'},
     					},
     					{
-    		    		{text = 'Support 👥', url = 'https://telegram.me/joinchat/BvytAD9KL7J2PE2u0ek3ZA'},
+    		    		{text = 'Support 👥', url = 'https://telegram.me/joinchat/ChhotD-RLOr9FoeysgQ9hw'},
  },
 	    {
 	    {text = 'Back To Menu 🔗', callback_data = '!home'}
@@ -17,8 +17,8 @@ local function do_keyboard_support()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
-    		    		{text = 'Persian Support', url = 'http://salam.im/buy/ecgvlup3ld'},
-    		    		{text = 'English Support', url = 'https://telegram.me/joinchat/BvytAD9KL7J2PE2u0ek3ZA'},
+    		    		{text = 'Persian Support', url = 'https://telegram.me/joinchat/ChhotD-RLOr9FoeysgQ9hw'},
+    		    		{text = 'English Support', url = 'https://telegram.me/joinchat/ChhotD-RLOr9FoeysgQ9hw'},
 	    },
 	    {
 	    {text = 'Back To Menu 🔗', callback_data = '!robot'}
@@ -68,7 +68,7 @@ local function do_keyboard_game()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'Select One ⏬', url = 'https://telegram.me/BeatBot_team'},
+    		{text = 'Select One ⏬', url = 'https://telegram.me/'},
 	    },
 	{
 	        		{text = '1', url = 'https://telegram.me/HeIsAlireza'},
@@ -104,13 +104,8 @@ local action = function(msg, blocks, ln)
         local query = blocks[1]
         local msg_id = msg.message_id
         local text
-        if query == 'channel' then
-            local text = '📡 *BeatBotTeam Channels :*'
-            local keyboard = do_keyboard_channel()
-        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
-end
 if query == 'robot' then
-            local text = [[📍 *Welcome* To _Maximus_  📍]]
+            local text = [[📍 یکی رو انتخاب کن، هر کدوم از ادمینا که اومد ازش پول بگیر!📍]]
             local keyboard = do_keyboard_robot()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
