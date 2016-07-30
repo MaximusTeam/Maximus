@@ -40,6 +40,7 @@ local function do_keyboard_private()
         },
                 {
                 {text = '● AppRoids Information ● ', url = 'https://telegram.me'}
+        }
     }
     return keyboard
 end
