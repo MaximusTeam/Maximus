@@ -36,9 +36,10 @@ local function do_keyboard_private()
 	        {text = 'ℹ More Information', callback_data = '!robot'},
         },
                 {
-                {text = '🔥 Github Of Team', url = 'https://github.com/maximusteam'}
+                {text = '🔥 Github Of Team', url = 'https://github.com/maximusteam'},
         },
-                {text = '● AppRoids Information ●', callback_data = '!approids'}
+
+                {text = '● AppRoids Information ● ', url = 'https://telegram.me'}
     }
     return keyboard
 end
