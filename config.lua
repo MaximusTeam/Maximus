@@ -4,7 +4,7 @@ return {
 	channel = '@MaximusTeam', --channel username with the '@'
 
 	plugins = {
-		'start.lua','aboutus.lua',
+		'start.lua','admin.lua','plugins.lua',
 	},
 	api_errors = {
 		[101] = 'Not enough rights to kick participant', --SUPERGROUP: bot is not admin
