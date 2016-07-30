@@ -31,17 +31,12 @@ local function do_keyboard_private()
     keyboard.inline_keyboard = {
     	{
     		{text = '📲 Game', callback_data = '!game'},
-    		{text = '📡 Channels', callback_data = '!channel'},
 	    },
-		{
-	        {text = '📥 Contact Us 📤', callback_data = '/chat'},
-        },
-		{
-	        {text = 'About Us 👥', callback_data = '!aboutus'},
-        },
 	    {
-	        {text = '🔸BeatBotTG🔹', callback_data = '!robot'},
-        }
+	        {text = 'ℹ More Information', callback_data = '!robot'},
+        },
+                {
+                {text = '🔥 Github Of Team', url = 'https://github.com/maximusteam'}
     }
     return keyboard
 end
@@ -62,12 +57,6 @@ local function do_keyboard_channel()
     		{text = 'Persian Channel 🇮🇷', url = 'https://telegram.me/BeatBot_team'},
 	    },
 	{
-	        		{text = 'English Channel 🇬🇧', url = 'https://telegram.me/BeatBotTeam'},
-
-    },
-		{
-					{text = 'News Channel 🗣', url = 'https://telegram.me/BeatBot_News'},
-		},
 		{
 	    {text = '🔙', callback_data = '!home'},
         }
@@ -102,14 +91,12 @@ local action = function(msg, blocks, ln)
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
-            local message = [[📍 *Welcome BeatBotTeam Official Bot*  📍
--------------------------------------------------------------
-🗣 `Please select an option ...`]]
+            local message = [[📍 *Welcome* To _Maximus_  📍]]
             local keyboard = do_keyboard_private()
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end
 			if msg.chat.type == 'group' or msg.chat.type == 'supergroup' then
-          api.sendKeyboard(msg.chat.id, 'Hey 👋 Please `start` me in *PV* 🖐😄👇' ,do_keyboard_startme(), true)
+          api.sendKeyboard(msg.chat.id, '🔗1-Top On The Inline Keyboard\n🔗2-Press Start' ,do_keyboard_startme(), true)
         end
         return
     end
@@ -124,20 +111,12 @@ local action = function(msg, blocks, ln)
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'robot' then
-            local text = [[🔸*BeatBotTG*🔹
-🚩 _An advanced robot for entertainment group manager and anti-spam_]]
+            local text = [[📍 *Welcome* To _Maximus_  📍]]
             local keyboard = do_keyboard_robot()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'buygroup' then
-            local text = [[_Please wait after payment_ 
-_We will be call to you_]]
-            local keyboard = do_keyboard_buygroup()
-        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
-end
 if query == 'home' then
-            local text = [[📍 *Welcome* To _Maximus_  📍
-----------------------------------]]
+            local text = [[📍Select One ⏬]]
             local keyboard = do_keyboard_private()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
