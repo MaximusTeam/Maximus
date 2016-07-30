@@ -89,19 +89,7 @@ local action = function(msg, blocks, ln)
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
-            local message = [[﷽
-
-
-➊_هر هفتہ یک اکانت  #کلش🔰 
-
-➋_برنامہ هاے پولے به #رایگان 💰
-
-➌_ اموزش #هــــڪ و امنیت 📛
-
-➍_ #تـــــــبلیغات:👇⚡
-
- 🆔: @Arian721
-]]
+            local message = [[Comming Soon....]]
             local keyboard = do_keyboard_approids()
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end
