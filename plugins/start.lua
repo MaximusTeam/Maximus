@@ -37,7 +37,8 @@ local function do_keyboard_private()
         },
                 {
                 {text = '🔥 Github Of Team', url = 'https://github.com/maximusteam'}
-        }
+        },
+                {text = '● AppRoids Information ●', callback_data = '!approids'}
     }
     return keyboard
 end
