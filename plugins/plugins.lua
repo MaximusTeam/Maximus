@@ -1,5 +1,5 @@
 local action = function(msg, matches)
-  local text = "🔗 *List Of All Plugins*\n1- start\n2- plugins"
+  local text = "🔗 *List Of All Plugins*\n1- _start_\n2- _plugins_\n3- _stats_"
   api.sendReply(msg,text,true)
   end
 local triggers = {
