@@ -50,6 +50,7 @@ local function do_keyboard_startme()
 	    }
     }
     return keyboard
+end
 
 local function do_keyboard_game()
     local keyboard = {}
@@ -84,7 +85,7 @@ local action = function(msg, blocks, ln)
 			if msg.chat.type == 'group' or msg.chat.type == 'supergroup' then
           api.sendKeyboard(msg.chat.id, '🔗1-Top On The Inline Keyboard\n🔗2-Press Start' ,do_keyboard_startme(), true)
         end
-        return
+        return keyboard
     end
 
     if msg.cb then
