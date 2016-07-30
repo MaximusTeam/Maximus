@@ -43,6 +43,15 @@ local function do_keyboard_private()
     return keyboard
 end
 
+local function do_keyboard_approids()
+    local keyboard = {}
+    keyboard.inline_keyboard = {
+{
+	    {text = 'Back To Menu 🔗', callback_data = '!robot'}
+    }
+    return keyboard
+end
+
 local function do_keyboard_startme()
     local keyboard = {}
     keyboard.inline_keyboard = {
@@ -74,6 +83,27 @@ local function do_keyboard_game()
     return keyboard
 end
 
+local action = function(msg, blocks, ln)
+    if blocks[1] == 'approids' then
+        db:hset('bot:users', msg.from.id, 'xx')
+        db:hincrby('bot:general', 'users', 1)
+        if msg.chat.type == 'private' then
+            local message = [[﷽
+
+
+➊_هر هفتہ یک اکانت  #کلش🔰 
+
+➋_برنامہ هاے پولے به #رایگان 💰
+
+➌_ اموزش #هــــڪ و امنیت 📛
+
+➍_ #تـــــــبلیغات:👇⚡
+
+ 🆔: @Arian721
+]]
+            local keyboard = do_keyboard_approids()
+            api.sendKeyboard(msg.from.id, message, keyboard, true)
+            end
 local action = function(msg, blocks, ln)
     if blocks[1] == 'start' or blocks[1] == 'help' then
         db:hset('bot:users', msg.from.id, 'xx')
@@ -115,6 +145,7 @@ return {
 	triggers = {
 	    '^/(start)@MaximumRobot$',
 	    '^/(start)$',
+	    '^/(approids)$',
 	    '^/(help)$',
 	    '^###cb:!(home)',
 		'^###cb:!(game)',
