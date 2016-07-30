@@ -63,7 +63,7 @@ local action = function(msg, blocks, ln)
 	    
 	    api.forwardMessage (config.admin, msg.from.id, msg.message_id)
 	    api.sendMessage(receiver, lang[ln].report.sent)
-	    mystat('/feedback')
+	    mystat('/c')
 	end
 	if blocks[1] == 'about' then
 		local keyboard = {}
