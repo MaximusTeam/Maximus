@@ -2,27 +2,27 @@ local function do_keyboard_robot()
     local keyboard = {}
     keyboard.inline_keyboard = {
 		{
-    					{text = 'Share Robot Contact 🤖🤘🏾', callback_data = '!share'},
+    					{text = 'Share Admin Contact ℹ🏾', callback_data = '!share'},
     					},
     					{
-    		    		{text = 'Buy Group 💸', callback_data = '!buygroup'},
     		    		{text = 'Support 👥', url = 'https://telegram.me/joinchat/BvytAD9KL7J2PE2u0ek3ZA'},
-	    },
+                                {text = 'Support Links 💸', callback_data = '!support'},	   
+ },
 	    {
-	    {text = '🔙', callback_data = '!home'}
+	    {text = 'Back To Menu 🔗', callback_data = '!home'}
         }
     }
     return keyboard
 end
-local function do_keyboard_buygroup()
+local function do_keyboard_support()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
-    		    		{text = 'Iranians', url = 'http://salam.im/buy/ecgvlup3ld'},
-    		    		{text = 'Other countries', url = 'https://telegram.me/joinchat/BvytAD9KL7J2PE2u0ek3ZA'},
+    		    		{text = 'Persian Support', url = 'http://salam.im/buy/ecgvlup3ld'},
+    		    		{text = 'English Support', url = 'https://telegram.me/joinchat/BvytAD9KL7J2PE2u0ek3ZA'},
 	    },
 	    {
-	    {text = '🔙', callback_data = '!robot'}
+	    {text = 'Back To Menu 🔗', callback_data = '!robot'}
         }
     }
     return keyboard
@@ -31,7 +31,7 @@ local function do_keyboard_private()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '🌐 Site', url = 'http://beatbot.ir'},
+    		{text = '📲 Game', callback_data = '!game'},
     		{text = '📡 Channels', callback_data = '!channel'},
 	    },
 		{
@@ -71,6 +71,27 @@ local function do_keyboard_channel()
 		},
 		{
 	    {text = '🔙', callback_data = '!home'},
+        }
+    
+    }
+    return keyboard
+end
+
+local function do_keyboard_game()
+    local keyboard = {}
+    keyboard.inline_keyboard = {
+    	{
+    		{text = 'Select One ⏬', url = 'https://telegram.me/BeatBot_team'},
+	    },
+	{
+	        		{text = '1', url = 'https://telegram.me/HeIsAlireza'},
+
+    },
+		{
+					{text = '2', url = 'https://telegram.me/Arian721'},
+		},
+		{
+	    {text = 'Back To Menu 🔗', callback_data = '!home'},
         }
     
     }
@@ -123,7 +144,9 @@ if query == 'home' then
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
         if query == 'share' then
-     api.sendContact(msg.from.id, '+639380063518', '🔸ßελτ ßΘτ🔹 [ Use ! ]')
+local text = [[_You Can Join Our Supports By ⏬_]]
+            local keyboard = do_keyboard_support()
+        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
     end
 
@@ -132,7 +155,7 @@ end
 return {
 	action = action,
 	triggers = {
-	    '^/(start)@BeatBotTeamBot$',
+	    '^/(start)@MaximumRobot$',
 	    '^/(start)$',
 	    '^/(help)$',
 	    '^###cb:!(home)',
@@ -140,6 +163,7 @@ return {
 	    '^###cb:!(channel)',
 	    '^###cb:!(robot)',
 	    '^###cb:!(share)',
+            '^###cb:!(support)',
 
     }
 }
