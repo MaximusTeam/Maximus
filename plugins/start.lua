@@ -6,7 +6,6 @@ local function do_keyboard_robot()
     					},
     					{
     		    		{text = 'Support 👥', url = 'https://telegram.me/joinchat/BvytAD9KL7J2PE2u0ek3ZA'},
-                                {text = 'Support Links 💸', callback_data = '!support'},	   
  },
 	    {
 	    {text = 'Back To Menu 🔗', callback_data = '!home'}
@@ -137,16 +136,13 @@ _We will be call to you_]]
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'home' then
-            local text = [[📍 *Welcome BeatBotTeam Official Bot*  📍
--------------------------------------------------------------
-🗣 `Please select an option ...`]]
+            local text = [[📍 *Welcome* To _Maximus_  📍
+----------------------------------]]
             local keyboard = do_keyboard_private()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
         if query == 'share' then
-local text = [[_You Can Join Our Supports By ⏬_]]
-            local keyboard = do_keyboard_support()
-        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
+     api.sendContact(msg.from.id, '+12818539367', 'Arian')
 end
     end
 
