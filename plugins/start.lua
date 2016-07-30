@@ -56,12 +56,10 @@ local function do_keyboard_channel()
     keyboard.inline_keyboard = {
     	{
     		{text = 'Persian Channel 🇮🇷', url = 'https://telegram.me/BeatBot_team'},
-	    },
-	{
+        },
 		{
-	    {text = '🔙', callback_data = '!home'},
+	        {text = '🔗 Back To Menu', callback_data = '!home'},
         }
-    
     }
     return keyboard
 end
@@ -79,9 +77,9 @@ local function do_keyboard_game()
 		{
 					{text = '2', url = 'https://telegram.me/Arian721'},
 		},
-		{
+	        {
 	    {text = 'Back To Menu 🔗', callback_data = '!home'},
-        }
+        },
     
     }
     return keyboard
