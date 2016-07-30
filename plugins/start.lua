@@ -39,7 +39,7 @@ local function do_keyboard_private()
                 {text = '🔥 Github Of Team', url = 'https://github.com/maximusteam'},
         },
                 {
-                {text = '● AppRoids Information ● ', url = 'https://telegram.me'}
+                {text = '● Comming Soon... ● ', url = 'https://telegram.me'}
         }
     }
     return keyboard
@@ -106,12 +106,12 @@ local action = function(msg, blocks, ln)
         local msg_id = msg.message_id
         local text
 if query == 'robot' then
-            local text = [[📍Select One📍\n🔗یکی رو انتخاب کن🔗]]
+            local text = [[📍Select One📍 | 🔗یکی رو انتخاب کن🔗]]
             local keyboard = do_keyboard_robot()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'home' then
-            local text = [[📍Select One ⏬\nℹیکی رو انتخاب کنℹ]]
+            local text = [[📍Select One ⏬ | ℹیکی رو انتخاب کنℹ]]
             local keyboard = do_keyboard_private()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
