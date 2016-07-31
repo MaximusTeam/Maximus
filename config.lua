@@ -1,5 +1,5 @@
 return {
-	bot_api_key = '198585061:AAFenKWSl4dyC9Ped6oKLI6jNIQz2dcT4zc',
+	bot_api_key = '198585061:AAEldP0XDftAz9fjERCdxsFZos478PyMQaE',
 	admin = 169371828,221226480,61690296,
 	channel = '@AppRoids', --channel username with the '@'
 
