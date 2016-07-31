@@ -91,7 +91,12 @@ local action = function(msg, blocks, ln)
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
-            local message = [[📍 *Welcome* To _Maximus_  📍]]
+            local message = [⏭ *hello*
+✅  im *Maximus Bot*
+🌷 *select one of keyboards*
+❎ *send /plugins for give my plugins list*
+🗣 *send /ping for check my onlining*
+⚗ *you can send your feedback by* /feedback *[your message]*]]
             local keyboard = do_keyboard_private()
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end
