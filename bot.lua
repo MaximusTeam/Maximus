@@ -24,7 +24,7 @@ bot_init = function(on_reload) -- The function run when the bot is started or re
 	print(colors('%{green}----------------'))
 	print(colors('%{blue bright}Utils Hal Shod!'))
 	cross = dofile('utilities.lua') -- Load miscellaneous and cross-plugin functions.
-	print(colors('%{blue bright}LApi Function Halle!))
+	print(colors('%{blue bright}Api Function Halle!'))
 	api = require('methods')
 	
 	tot = 0
