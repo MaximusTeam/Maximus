@@ -1,10 +1,11 @@
 return {
 	bot_api_key = '198585061:AAFenKWSl4dyC9Ped6oKLI6jNIQz2dcT4zc',
 	admin = 169371828,221226480,61690296,
-	channel = '@MaximusTeam', --channel username with the '@'
+	channel = '@AppRoids', --channel username with the '@'
 
 	plugins = {
-		'start.lua','admin.lua','plugins.lua','tools.lua',
+		'start.lua','tools.lua','plugins.lua','admin.lua',
+	},
 	api_errors = {
 		[101] = 'Not enough rights to kick participant', --SUPERGROUP: bot is not admin
 		[102] = 'USER_ADMIN_INVALID', --SUPERGROUP: trying to kick an admin
