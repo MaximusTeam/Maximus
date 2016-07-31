@@ -91,7 +91,7 @@ local action = function(msg, blocks, ln)
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
-            local message = [⏭ *hello*
+            local message = [[ *hello*
 ✅  im *Maximus Bot*
 🌷 *select one of keyboards*
 ❎ *send /plugins for give my plugins list*
