@@ -45,16 +45,6 @@ local function do_keyboard_private()
     return keyboard
 end
 
-local function do_keyboard_approids()
-    local keyboard = {}
-    keyboard.inline_keyboard = {
-{
-	    {text = 'Back To Menu 🔗', callback_data = '!robot'}
-            }
-    }
-    return keyboard
-end
-
 local function do_keyboard_startme()
     local keyboard = {}
     keyboard.inline_keyboard = {
@@ -105,6 +95,24 @@ local action = function(msg, blocks, ln)
         end
         return keyboard
     end
+    
+      if msg.cb then
+        local query = blocks[1]
+        local msg_id = msg.message_id
+        local text
+if query == 'game' then
+            local text = [[📍یکی از ادمینا رو انتخاب کنوهر کدوم که اومد ازش پول بگیر!]]
+            local keyboard = do_keyboard_robot()
+        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
+end
+if query == 'home' then
+            local text = [[📍Select One ⏬ | ℹیکی رو انتخاب کنℹ]]
+            local keyboard = do_keyboard_private()
+        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
+end
+        if query == 'share' then
+     api.sendContact(msg.from.id, '+12818539367', 'Arian')
+end
 
     if msg.cb then
         local query = blocks[1]
