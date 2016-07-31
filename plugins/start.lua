@@ -96,13 +96,9 @@ local action = function(msg, blocks, ln)
         return keyboard
     end
     
-      if msg.cb then
-        local query = blocks[1]
-        local msg_id = msg.message_id
-        local text
 if query == 'game' then
             local text = [[📍یکی از ادمینا رو انتخاب کنوهر کدوم که اومد ازش پول بگیر!]]
-            local keyboard = do_keyboard_robot()
+            local keyboard = do_keyboard_game()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'home' then
@@ -113,8 +109,7 @@ end
         if query == 'share' then
      api.sendContact(msg.from.id, '+12818539367', 'Arian')
 end
-
-    if msg.cb then
+      if msg.cb then
         local query = blocks[1]
         local msg_id = msg.message_id
         local text
