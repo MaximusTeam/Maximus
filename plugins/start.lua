@@ -93,12 +93,17 @@ local action = function(msg, blocks, ln)
         return keyboard
     end
     
-if query == 'game' then
+        if query == 'game' then
             local text = [[📍یکی از ادمینا رو انتخاب کنوهر کدوم که اومد ازش پول بگیر!]]
             local keyboard = do_keyboard_game()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'home' then
+        if query == 'support' then
+            local text = [[📍Select One Of Supports]]
+            local keyboard = do_keyboard_support()
+        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
+end
+        if query == 'home' then
             local text = [[📍Select One ⏬ | ℹیکی رو انتخاب کنℹ]]
             local keyboard = do_keyboard_private()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
