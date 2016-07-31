@@ -37,9 +37,6 @@ local function do_keyboard_private()
         },
                 {
                 {text = '🔥 Github Of Team', url = 'https://github.com/maximusteam'},
-        },
-                {
-                {text = '● Comming Soon... ● ', url = 'https://telegram.me'}
         }
     }
     return keyboard
@@ -49,7 +46,7 @@ local function do_keyboard_startme()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '🙃👉 Click here ! 👈🙃', url = 'https://telegram.me/'..bot.username}
+    		{text = '🙃👉Start! 👈🙃', url = 'https://telegram.me/'..bot.username}
 	    }
     }
     return keyboard
@@ -59,7 +56,7 @@ local function do_keyboard_game()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'Select One ⏬', url = 'https://telegram.me/'},
+    		{text = 'Select One ⏬', url = 'https://telegram.me/Arian721'},
 	    },
 	{
 	        		{text = '1', url = 'https://telegram.me/HeIsAlireza'},
@@ -137,8 +134,7 @@ return {
 	    '^/(start)$',
 	    '^/(help)$',
 	    '^###cb:!(home)',
-		'^###cb:!(game)',
-	    '^###cb:!(channel)',
+	    '^###cb:!(game)',
 	    '^###cb:!(robot)',
 	    '^###cb:!(share)',
             '^###cb:!(support)',
