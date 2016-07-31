@@ -10,21 +10,21 @@ serpent = require('serpent')
 
 bot_init = function(on_reload) -- The function run when the bot is started or reloaded.
 	
-	print(colors('%{blue bright}Loading config.lua...'))
+	print(colors('%{blue bright}Config Hal Shod!'))
 	config = dofile('config.lua') -- Load configuration file.
 	if config.bot_api_key == '' then
-		print(colors('%{red bright}API KEY MISSING!'))
+		print(colors('%{red bright}Token kojast?'))
 		return
 	end
-	print(colors('%{red}BeatBotTeam'))
-	print(colors('%{red}Persian Channel @BeatBot_Team'))
-	print(colors('%{red}BeatBotTeam'))
-	print(colors('%{red}English Channel @BeatBotTeam'))
-	print(colors('%{yellow}DeVeLoPeR : @AmirHo3inF'))
+	print(colors('%{red}Maximus Team'))
+	print(colors('%{red}Created By @Arian721'))
+	print(colors('%{red}Admins Timsar And Alireza'))
+	print(colors('%{red}Members Comming Soon...'))
+	print(colors('%{yellow}CopyRIGHT @aRIAN721'))
 	print(colors('%{green}----------------'))
-	print(colors('%{blue bright}Loading utilities.lua...'))
+	print(colors('%{blue bright}Utils Hal Shod!'))
 	cross = dofile('utilities.lua') -- Load miscellaneous and cross-plugin functions.
-	print(colors('%{blue bright}Loading API functions table...'))
+	print(colors('%{blue bright}LApi Function Halle!))
 	api = require('methods')
 	
 	tot = 0
@@ -47,7 +47,7 @@ bot_init = function(on_reload) -- The function run when the bot is started or re
 	if not on_reload then
 		save_log('starts')
 		db:hincrby('bot:general', 'starts', 1)
-		api.sendMessage(config.admin, '*Bot started!*\n_'..os.date('On %A, %d %B %Y\nAt %X')..'_\n'..#plugins..' plugins loaded', true)
+		api.sendMessage(config.admin, '*Bot Start SHod :D*', true)
 	end
 	
 	-- Generate a random seed and "pop" the first random number. :)
